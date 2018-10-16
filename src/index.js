@@ -34,7 +34,7 @@ app.use(async (ctx) => {
           }
         }
       })
-      .where({map: true, active: true})
+      .where({ map: true, active: true })
       .select('slug cover title url tags address kind cover featured')
       .limit(limit)
 

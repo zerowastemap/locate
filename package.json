@@ -7,7 +7,8 @@
     "start": "node lib",
     "dev": "babel-node src/index.js",
     "build": "babel src -d lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard && npm run test-deps",
+    "test-deps": "dependency-check . && dependency-check . --extra --no-dev"
   },
   "keywords": [
     "mongodb",
@@ -15,6 +16,11 @@
   ],
   "author": "Augustin Godiscal <hello@auggod.tech>",
   "license": "MIT",
+  "standard": {
+    "ignore": [
+      "/lib/*.js"
+    ]
+  },
   "dependencies": {
     "koa": "^2.5.3",
     "koa-logger": "^3.2.0",
