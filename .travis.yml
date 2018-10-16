@@ -6,10 +6,7 @@ cache:
   directories:
     - "node_modules" # This will tell Travis CI to cache the dependencies
 script: yarn build
-before_install:
-  - npm install -g yarn --cache-min 999999999
-before_deploy: 
-  - npm install now --no-save # Install Now CLI on Travis
+before_deploy: npm install now --no-save # Install Now CLI on Travis
 deploy:
   - provider: script # Run a custom deployment script which we will define below
     script: now --token $NOW_TOKEN
@@ -22,5 +19,3 @@ deploy:
     skip_cleanup: true
     on:
       master: true
-install:
-  - yarn
