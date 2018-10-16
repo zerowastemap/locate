@@ -4,18 +4,12 @@ node_js:
 cache:
   yarn: true
   directories:
-    - "node_modules" # This will tell Travis CI to cache the dependencies
+    - "node_modules"
 script: yarn build
-before_deploy: npm install now --no-save # Install Now CLI on Travis
+before_deploy: npm install now --no-save
 deploy:
-  - provider: script # Run a custom deployment script which we will define below
-    script: now --token $NOW_TOKEN
-    skip_cleanup: true
-    on:
-      all_branches: true
-      master: false
   - provider: script
-    script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    script: now --token $NOW_TOKEN
     skip_cleanup: true
     on:
       master: true
