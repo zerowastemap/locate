@@ -1,0 +1,10 @@
+{
+  "public": false,
+  "type": "docker",
+  "features": {
+    "cloud": "v2"
+  },
+  "env": {
+    "DB_URI": "@zerowastemap-db-uri"
+  }
+}

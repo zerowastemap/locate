@@ -1,0 +1,32 @@
+{
+  "name": "@zerowastemap/locate",
+  "version": "1.0.0",
+  "description": "Locate",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node lib",
+    "dev": "babel-node src/index.js",
+    "build": "babel src -d lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "koajs"
+  ],
+  "author": "Augustin Godiscal <hello@auggod.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-logger": "^3.2.0",
+    "mongoose": "^5.3.4",
+    "mongoose-validator": "^2.1.0",
+    "now-env": "^3.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0"
+  }
+}
