@@ -3,7 +3,7 @@ import 'now-env'
 
 import Koa from 'koa'
 import logger from 'koa-logger'
-
+import cors from '@koa/cors'
 import db from './db'
 import Location from './model'
 
@@ -11,6 +11,7 @@ db(process.env.DB_URI)
 
 const app = new Koa()
 
+app.use(cors())
 app.use(logger())
 
 app.use(async (ctx) => {
